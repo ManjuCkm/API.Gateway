@@ -1,0 +1,46 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Course",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5001"
+        }
+      ],
+      "UpstreamPathTemplate": "/CQRS/Course",
+      "UpstreamHttpMethod": [ "Get","Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Student/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7235"
+        }
+      ],
+      "UpstreamPathTemplate": "/ThreeTier/Student/{id}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Course/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7235"
+        }
+      ],
+      "UpstreamPathTemplate": "/ThreeTier/Course/{id}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    }
+
+
+  ],
+  "GlobalConfiguration": {
+
+  }
+
+}
